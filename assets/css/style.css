@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+}
+
+#logo {
+    width: 60%;
+}
+
+#column {
+    margin-top: -110px;
+    margin-bottom: 10px;
+}
