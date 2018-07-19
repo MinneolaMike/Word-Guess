@@ -31,10 +31,11 @@ var choices = [
     "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
 ];
 
-//Variables for wins, losses, and Guesses Left
+//Global Varibles
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
+var underscores = [];
 
 //Start the game, reset counters, randomly select a word, then show the #of possible letters
 function startGame(){
@@ -48,21 +49,34 @@ function startGame(){
     rightGuesses = 0;
     document.querySelector("#remain").innerHTML = guessesLeft;
     // Split the solution into individual characters and draw dashes
-    solutionsplit = solutionPicked.split("");
-    underscores = solutionsplit.length;
+    solutionSplit = solutionPicked.split("");
+    underscores = solutionSplit.length;
     for (var i = 0; i< underscores; i++){
+        if (underscores.indexOf(" ")){
+            dashes.push(" ")
+        }
+        else {
         dashes.push("_ ");
+        }
         document.querySelector("#currentWord").innerHTML = dashes;
+        
     }
+    
 }
 window.onload = startGame;
 
 // player picks a letter
 document.onkeypress = function(event){
     var letterPicked = event.key;
+    letterPicked.toLowerCase();
 }
 
 //check the letter against the solution
+function checkLetter(){
+    if (letterPicked === solutionSplit){
+
+    }
+}
 // if the letter is right show it in the solution
 //if its wrong show it as wrong and remove a guess
 // if they run out of guesses -- game over
