@@ -35,13 +35,13 @@ var choices = [
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var underscores = [];
+var solutionSplit = [];
 
 //Start the game, reset counters, randomly select a word, then show the #of possible letters
 function startGame(){
     // Randomly Select A Word
     solutionPicked = solutions[Math.floor(Math.random() * solutions.length)];
-    console.log("Start Game Fired");
+    console.log(solutionPicked);
     //reset all applicable sections - everything except wins and losses
     guessesLeft = 10;
     wrongGuesses = [];
@@ -50,9 +50,9 @@ function startGame(){
     document.querySelector("#remain").innerHTML = guessesLeft;
     // Split the solution into individual characters and draw dashes
     solutionSplit = solutionPicked.split("");
-    underscores = solutionSplit.length;
-    for (var i = 0; i< underscores; i++){
-        if (underscores.indexOf(" ")){
+    console.log(solutionSplit);    
+    for (var i = 0; i< solutionSplit.length; i++){
+        if (solutionSplit[i].indexOf(" ")!=-1){
             dashes.push(" ")
         }
         else {
