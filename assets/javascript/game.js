@@ -24,15 +24,18 @@ var solutions = [
     "greased up deaf guy",
     "giant chicken"
 ];
+
 // array for possible choices by players
 var choices = [
     "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
     "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
 ];
+
 //Variables for wins, losses, and Guesses Left
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
+
 //Start the game, reset counters, randomly select a word, then show the #of possible letters
 function startGame(){
     // Randomly Select A Word
@@ -43,6 +46,7 @@ function startGame(){
     wrongGuesses = [];
     dashes = [];
     rightGuesses = 0;
+    document.querySelector("#remain").innerHTML = guessesLeft;
     // Split the solution into individual characters and draw dashes
     solutionsplit = solutionPicked.split("");
     underscores = solutionsplit.length;
@@ -50,16 +54,17 @@ function startGame(){
         dashes.push("_ ");
         document.querySelector("#currentWord").innerHTML = dashes;
     }
-
 }
 window.onload = startGame;
+
 // player picks a letter
 document.onkeypress = function(event){
     var letterPicked = event.key;
-    
 }
+
+//check the letter against the solution
 // if the letter is right show it in the solution
-//if its wrong show it as wrong and keep in used letters area
+//if its wrong show it as wrong and remove a guess
 // if they run out of guesses -- game over
 //if they guess the word -- game over
 //Update the wins and losses
