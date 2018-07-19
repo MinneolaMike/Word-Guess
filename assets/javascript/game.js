@@ -26,16 +26,17 @@ var solutions = [
 ];
 
 // array for possible choices by players
-var choices = [
-    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
-    "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-];
+// var choices = [
+    // "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+    // "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+// ];
 
 //Global Varibles
 var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
-var solutionSplit = [];
+var wrongGuesses = [];
+var correctGuesses = [];
 
 //Start the game, reset counters, randomly select a word, then show the #of possible letters
 function startGame(){
@@ -72,9 +73,9 @@ document.onkeypress = function(event){
 }
 
 //check the letter against the solution
-function checkLetter(){
-    if (letterPicked === solutionSplit){
-
+function checkLetter(letterPicked){
+    if (letterPicked === solutionSplit[i]){
+        dashes.push("letterPicked")
     }
 }
 // if the letter is right show it in the solution
