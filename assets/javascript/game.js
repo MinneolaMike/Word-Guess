@@ -59,8 +59,12 @@ function wordPick(){
     // Randomly Select A Word
     solutionPicked = solutions[Math.floor(Math.random() * solutions.length)];
     console.log(solutionPicked);
+    // var tester = solutionPicked.replace(/\s+/g, '');
+    // console.log(tester);
+    // console.log(solutionPicked);
     return solutionPicked;    
 }
+
 //simply defining solutionPicked outside of the function
 var solutionPicked = wordPick();
 
@@ -74,9 +78,16 @@ function solutionSplit(){
 
 //Adds the underscores for the solution to the page
 function visualAnswer(){
-    var underScores = indexOf(solutionPicked);
-    document.querySelector("#currentWord").innerHTML = underScores;
-    underScores.push("_ ");
+    // var underScores = indexOf(solutionPicked);
+    // document.querySelector("#currentWord").innerHTML = solutionPicked;
+    // underScores.push("_ ");
+    // solutionPicked[i] = "_ ";
+    for(var i = 0; i < bank.length; i++){
+        bank[i] = "_ ";
+        console.log(bank);
+        document.querySelector("#currentWord").innerHTML = bank;
+    }
+    return bank;
 }
 
 // player picks a letter
